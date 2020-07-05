@@ -24,10 +24,10 @@ namespace DatingApp.Api.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("PasswordHash")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("BLOB");
 
                     b.Property<string>("PasswordSalt")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("BLOB");
 
                     b.Property<string>("UserName")
                         .HasColumnType("TEXT");
