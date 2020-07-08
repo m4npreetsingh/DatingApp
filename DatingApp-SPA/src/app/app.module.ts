@@ -20,8 +20,9 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListsComponent } from './lists/lists.component';
-import { MemberListsComponent } from './member-lists/member-lists.component';
+import { MemberListsComponent } from './member/member-lists/member-lists.component';
 import { MessagesComponent } from './messages/messages.component';
+import { MemberCardComponent } from './member/member-card/member-card.component';
 
 @NgModule({
    declarations: [
@@ -32,7 +33,8 @@ import { MessagesComponent } from './messages/messages.component';
       RegisterComponent,
       ListsComponent,
       MemberListsComponent,
-      MessagesComponent
+      MessagesComponent,
+      MemberCardComponent
    ],
    imports: [
       BrowserModule,

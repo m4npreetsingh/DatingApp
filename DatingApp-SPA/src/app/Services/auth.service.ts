@@ -32,14 +32,13 @@ register(model:any){
 }
 loggedIn(){
   const token = localStorage.getItem('token');
-  console.log(token);
+
   let isExpired : boolean  = false;
   try{
    isExpired  = this.jwtHelper.isTokenExpired(token);
 }catch{
-  isExpired=true;
+  isExpired= true;
 }
-  console.log(isExpired);
   return !isExpired;
 }
 
