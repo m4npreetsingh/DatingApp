@@ -5,6 +5,18 @@
     cursor: pointer;
 }
 nav{
-    box-shadow: 0 0px 8px 0 rgba(243, 53, 53, 0.801), 0 6px 20px 0 rgba(182, 62, 62, 0.19);
+    box-shadow: 0 0px 8px 0 rgba(53, 243, 164, 0.801), 0 6px 20px 0 rgba(182, 62, 62, 0.19);
+    background-color:lightseagreen;
 
 }
+/* .abc a{
+    background: lightseagreen !important;
+    color:yellow !important;
+   
+}
+
+.active a{
+    background: lightseagreen ;
+    color: lightcoral !important;
+    font-weight: 700;
+} */

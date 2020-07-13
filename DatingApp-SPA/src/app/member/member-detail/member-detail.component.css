@@ -3,3 +3,57 @@
   color:white;
 
 }
+.tabset{
+  background-color:lightseagreen;
+   height:40px;
+}
+
+.tab{
+  height:100%;
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+/* .tab-content{
+  height: 100%;
+
+} */
+.tab:hover{
+  background-color: cadetblue;
+  cursor: pointer;
+  color:lightcoral ;
+  border-bottom-style: solid;
+  border-bottom-color: lightcoral;
+}
+.tab:active{
+  background-color: white;
+  cursor: pointer;
+  color:lightcoral ;
+}
+
+p{
+ margin:0px 0 0px 0; 
+}
+.tab-body{
+  min-height: 200px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+    border-radius:0 0 15px 50px;
+}
+
+.active-tab{
+  background-color: white;
+  cursor: pointer;
+  color:lightcoral ;
+  border-bottom-style: solid;
+  border-bottom-color: lightcoral;
+}
+.active-tab:hover {
+  background-color: white;
+  cursor: pointer;
+  color:lightcoral ;
+  border-bottom-style: solid;
+  border-bottom-color: lightcoral;
+}

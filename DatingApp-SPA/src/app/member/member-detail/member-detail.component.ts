@@ -12,6 +12,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MemberDetailComponent implements OnInit {
 user: User;
+Photos:boolean =false;
+About:boolean = true;
+Interests:boolean = false;
+Messages:boolean = false;
+
   constructor(private userService: UserService, private alertify: AlertifyjsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -26,6 +31,38 @@ user: User;
     },err=>{
       this.alertify.error(err);
     })
+  }
+
+  tabActivation(id){
+    console.log("hi");
+    console.log(id);
+    
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tab");
+    console.log(tabcontent.length);
+    tablinks = document.getElementsByClassName("tab");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active-tab", "");
+    }
+    document.getElementById(id).className += "tab col-2 active-tab";
+    this.Photos=false;this.About=false;this.Interests=false;this.Messages=false;
+    switch(id){
+      case "photos":
+        this.Photos =true;
+        break;
+      case "about":
+      this.About =true;
+      break;
+      case "interests":
+      this.Interests =true;
+      break;
+      case "messages":
+      this.Messages =true;
+      break;
+      
+        
+    }
+
   }
 
 
