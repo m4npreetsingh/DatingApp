@@ -23,6 +23,7 @@ import { ListsComponent } from './lists/lists.component';
 import { MemberListsComponent } from './member/member-lists/member-lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MemberCardComponent } from './member/member-card/member-card.component';
+import { MemberDetailComponent } from './member/member-detail/member-detail.component';
 
 export function tokenGetter(){
    return localStorage.getItem('token');
@@ -38,7 +39,8 @@ export function tokenGetter(){
       ListsComponent,
       MemberListsComponent,
       MessagesComponent,
-      MemberCardComponent
+      MemberCardComponent,
+      MemberDetailComponent
    ],
    imports: [
       BrowserModule,

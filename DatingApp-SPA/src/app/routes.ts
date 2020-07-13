@@ -4,6 +4,7 @@ import { ListsComponent } from './lists/lists.component';
 import { MemberListsComponent } from './member/member-lists/member-lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { MemberDetailComponent } from './member/member-detail/member-detail.component';
 
 export const appRoutes: Routes = [
     {path:'', component : HomeComponent},
@@ -14,7 +15,9 @@ export const appRoutes: Routes = [
         children:[
             { path: 'lists', component: ListsComponent },
             { path: 'members', component: MemberListsComponent },
-            { path: 'messages', component: MessagesComponent }
+            { path: 'messages', component: MessagesComponent },
+            { path: 'members/:id', component: MemberDetailComponent }
+
         ]
     },
    
