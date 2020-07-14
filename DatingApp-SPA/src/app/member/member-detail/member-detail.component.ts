@@ -20,7 +20,10 @@ Messages:boolean = false;
   constructor(private userService: UserService, private alertify: AlertifyjsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.loadUser();
+    //this.loadUser();
+    this.route.data.subscribe(data => {
+      this.user = data['user']
+    })
   }
 
   loadUser(){

@@ -40,7 +40,7 @@ p{
   min-height: 200px;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);   
-    border-radius:0 0 15px 50px;
+    border-radius:0 0 15px 15px;
 }
 
 .active-tab{
@@ -56,4 +56,11 @@ p{
   color:lightcoral ;
   border-bottom-style: solid;
   border-bottom-color: lightcoral;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .tabset{
+    margin-top: 10px;;
+  }
 }
