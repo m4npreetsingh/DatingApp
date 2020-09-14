@@ -65,6 +65,7 @@
           <h5>Interests</h5>
           <p>{{user.interests}}</p>
         </div><div *ngIf="Photos">
+          <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
           <p>Photos</p>
         </div><div *ngIf="Messages">
           <p>Mes</p>

@@ -3,6 +3,7 @@ import { UserService } from 'src/app/Services/User.service';
 import { AlertifyjsService } from 'src/app/Services/alertifyjs.service';
 import { User } from 'src/app/_models/User';
 import { ActivatedRoute } from '@angular/router';
+import { NgxGalleryImage, NgxGalleryOptions, NgxGalleryAnimation } from '@kolkov/ngx-gallery';
 
 
 @Component({
@@ -16,6 +17,8 @@ Photos:boolean =false;
 About:boolean = true;
 Interests:boolean = false;
 Messages:boolean = false;
+galleryOptions: NgxGalleryOptions[];
+  galleryImages: NgxGalleryImage[];
 
   constructor(private userService: UserService, private alertify: AlertifyjsService, private route: ActivatedRoute) { }
 
@@ -24,6 +27,19 @@ Messages:boolean = false;
     this.route.data.subscribe(data => {
       this.user = data['user']
     })
+
+    this.galleryOptions=[
+      {
+        width:'500px',
+        height:'500px',
+        imagePercent:100,
+        thumbnailsColumns:4,
+        imageAnimation:NgxGalleryAnimation.Slide,
+        preview:true
+      }
+    ]
+
+    this.galleryImages = this.getImages();
   }
 
   loadUser(){
@@ -35,6 +51,22 @@ Messages:boolean = false;
       this.alertify.error(err);
     })
   }
+
+  // tslint:disable-next-line: one-line
+  getImages(){
+    // tslint:disable-next-line: whitespace
+    const imageUrls=[];
+    for (const photo of this.user.photos) {
+      imageUrls.push({
+        small:photo.url,
+        medium:photo.url,
+        large:photo.url
+      })
+    }
+    return imageUrls;
+  }
+
+
 
   tabActivation(id){
     console.log("hi");

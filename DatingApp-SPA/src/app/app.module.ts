@@ -3,9 +3,8 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import {JwtModule} from '@auth0/angular-jwt';
 
-
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 
@@ -24,12 +23,14 @@ import { MemberListsComponent } from './member/member-lists/member-lists.compone
 import { MessagesComponent } from './messages/messages.component';
 import { MemberCardComponent } from './member/member-card/member-card.component';
 import { MemberDetailComponent } from './member/member-detail/member-detail.component';
+
 import { AuthGuard } from './_guards/auth.guard';
 import { UserService } from './Services/User.service';
 import { AuthService } from './Services/auth.service';
 import { MemberDetailResolver } from './_resolvers/member-detail-resolver';
 import { AlertifyjsService } from './Services/alertifyjs.service';
 import { MemberListResolver } from './_resolvers/member-list-resolver';
+import { JwtModule } from '@auth0/angular-jwt';
 
 export function tokenGetter(){
    return localStorage.getItem('token');
@@ -46,7 +47,7 @@ export function tokenGetter(){
       MemberListsComponent,
       MessagesComponent,
       MemberCardComponent,
-      MemberDetailComponent
+      MemberDetailComponent,
    ],
    imports: [
       BrowserModule,
@@ -55,6 +56,7 @@ export function tokenGetter(){
       BrowserAnimationsModule,
       BsDropdownModule.forRoot(),
       RouterModule.forRoot(appRoutes),
+      NgxGalleryModule ,
       JwtModule.forRoot({
          config: {
             tokenGetter,
